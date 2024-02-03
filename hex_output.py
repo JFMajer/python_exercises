@@ -1,11 +1,23 @@
-def hex_output():
+from typing import Optional
 
+
+def hex_output(hex_number: str) -> Optional[int]:
     dec_number = 0
-    user_input = input("Enter hex number: ")
-    for i, letter in enumerate(reversed(user_input)):
-        dec_number += int(letter, 16) * (16 ** i)
+
+    try:
+        for i, letter in enumerate(reversed(hex_number)):
+            dec_number += int(letter, 16) * (16 ** i)
+    except ValueError:
+        print(f"Error: '{letter}' is not a valid hexadecimal digit.")
+        return None
+
+    return dec_number
 
 
-    print(f"result is {dec_number}")
+user_input = input("Enter hex number: ")
+result = hex_output(user_input)
 
-hex_output()
+if result is None:
+    print("Invalid hexadecimal input.")
+else:
+    print(f"Result of conversion is {result}")
