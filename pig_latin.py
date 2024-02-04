@@ -4,9 +4,9 @@ def pig_latin(word: str) -> str:
 
     word = word.lower()
     if word[0] in "aeiou":
-        return word + "way"
+        return f'{word}way'
     else:
-        return word[1:] + word[0] + "ay"
+        return f'{word[1:]}{word[0]}ay'
 
 
 word1 = pig_latin("air")
