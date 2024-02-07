@@ -14,9 +14,9 @@ def ubbi_dubbi(word: string) -> string:
     return ''.join(word_ubbi_dubbi)
 
 
-ubi_dubi1 = ubbi_dubbi("program")
-print(ubi_dubi1)
-ubi_dubi2 = ubbi_dubbi("milk")
-print(ubi_dubi2)
-ubi_dubi3 = ubbi_dubbi("elephant")
-print(ubi_dubi3)
+# ubi_dubi1 = ubbi_dubbi("program")
+# print(ubi_dubi1)
+# ubi_dubi2 = ubbi_dubbi("milk")
+# print(ubi_dubi2)
+# ubi_dubi3 = ubbi_dubbi("elephant")
+# print(ubi_dubi3)
