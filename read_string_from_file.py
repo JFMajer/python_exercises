@@ -3,8 +3,11 @@ import re
 
 
 def read_string_from_file(filename) -> str:
-    data = Path(filename).read_text()
-    return data
+    if Path(filename).exists():
+        data = Path(filename).read_text()
+        return data
+    else:
+        raise FileNotFoundError(f"The file {filename} does not exist.")
 
 
 def longest_word(text: str) -> list[str]:
