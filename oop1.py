@@ -34,11 +34,24 @@ class Car:
         self.make = make
         self.model = model
         self.year = year
+        self.odometer_reading = 0
 
     def get_descriptive_name(self):
         long_name = f"{self.year} {self.make} {self.model}"
         return long_name
 
+    def read_odometer(self):
+        print(f"This car has {self.odometer_reading} kilometers on it")
+
+    def update_odometer(self, new_value):
+        if new_value < self.odometer_reading:
+            print("You can't roll odometer back")
+        self.odometer_reading = new_value
+
 
 my_new_car = Car('audi', 'a4', 2024)
 print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+my_new_car.update_odometer(1000)
+my_new_car.read_odometer()
+my_new_car.update_odometer(999)
