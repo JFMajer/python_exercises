@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "id": 11,
+            "name": "cbsiiukd",
+            "age": 25,
+            "email": "DqFwu@example.com"
+        },
+        {
+            "id": 13,
+            "name": "PVbnblJq",
+            "age": 58,
+            "email": "EwVvC@example.com"
+        },
+        {
+            "id": 1,
+            "name": "ijEuJrQa",
+            "age": 54,
+            "email": "vZzsK@example.com"
+        },
+        {
+            "id": 34,
+            "name": "RRqtQzVl",
+            "age": 36,
+            "email": "DIfgj@example.com"
+        },
+        {
+            "id": 65,
+            "name": "PecsYZdw",
+            "age": 36,
+            "email": "zXrBM@example.com"
+        }
+    ],
+    "settings": {
+        "theme": "dark",
+        "notifications": true,
+        "language": "Spanish"
+    }
+}
