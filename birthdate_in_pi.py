@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 from colorama import Fore
 
@@ -9,9 +10,14 @@ while True:
     else:
         print("Please provide 6 digits")
 
-path = Path('one_million_digits.txt')
 
-content = path.read_text()
+path = Path('one_million_digits1.txt')
+
+try:
+    content = path.read_text()
+except FileNotFoundError:
+    print(Fore.RED + "Couldn't read file content, file does not exists")
+    sys.exit(1)
 
 index = content.find(birthdate.strip())
 
