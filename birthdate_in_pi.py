@@ -11,12 +11,12 @@ while True:
         print("Please provide 6 digits")
 
 
-path = Path('one_million_digits1.txt')
+path = Path('one_million_digits.txt')
 
 try:
     content = path.read_text()
 except FileNotFoundError:
-    print(Fore.RED + "Couldn't read file content, file does not exists")
+    print(Fore.RED + f"Couldn't read file content, file {path} not exists")
     sys.exit(1)
 
 index = content.find(birthdate.strip())
