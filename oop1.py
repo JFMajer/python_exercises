@@ -52,10 +52,24 @@ class Car:
 class ElectricCar(Car):
     def __init__(self, make, model, year):
         super().__init__(make, model, year)
-        self.battery_size = 40
+        self.battery = Battery(45)
 
     def describe_battery(self):
-        print(f"This car has {self.battery_size}-kWh battery.")
+        print(f"This car has {self.battery.get_capacity()}-kWh battery.")
+
+    def get_range(self):
+        print(f"I have {self.battery.get_range()} kilometers of range")
+
+
+class Battery:
+    def __init__(self, capacity=40):
+        self.capacity = capacity
+
+    def get_capacity(self):
+        return self.capacity
+
+    def get_range(self):
+        return self.capacity * 4
 
 
 my_new_car = Car('audi', 'a4', 2024)
@@ -69,3 +83,4 @@ my_leaf = ElectricCar('nissan', 'leaf', 2022)
 print(my_leaf.get_descriptive_name())
 my_leaf.read_odometer()
 my_leaf.describe_battery()
+my_leaf.get_range()
