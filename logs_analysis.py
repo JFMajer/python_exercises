@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from typing import Set
 
 
 def count_requests_by_ip(filename):
@@ -34,6 +35,21 @@ def count_response_codes(filename):
     return response_codes
 
 
+def unique_ips(filename: str) -> Set:
+    path = Path(filename)
+    unique_ips = set()
+    with path.open(mode="r", encoding="utf-8") as log_file:
+        for line in log_file:
+            try:
+                log_entry = json.loads(line)
+                remote_ip = log_entry["remote_ip"]
+                unique_ips.add(remote_ip)
+            except json.JSONDecodeError:
+                print("Error decoding JSON from line", line)
+                continue
+    return unique_ips
+
+
 filename = "files/nginx_json_logs"
 response_code_stats = count_response_codes(filename)
 for resp_code in sorted(response_code_stats.keys()):
@@ -42,3 +58,6 @@ for resp_code in sorted(response_code_stats.keys()):
 # ip_counts = count_requests_by_ip("files/nginx_json_logs")
 # for ip, count in ip_counts.items():
 #     print(f"{ip}: {count}")
+
+unique_ip_adrs = unique_ips(filename)
+print(f"IP adresses accesing your server: {unique_ip_adrs}")
