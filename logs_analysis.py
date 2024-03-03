@@ -35,7 +35,7 @@ def count_response_codes(filename):
     return response_codes
 
 
-def unique_ips(filename: str) -> Set:
+def unique_ips(filename: str) -> Set[str]:
     path = Path(filename)
     unique_ips = set()
     with path.open(mode="r", encoding="utf-8") as log_file:
