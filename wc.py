@@ -7,6 +7,7 @@ def wc(filename: str):
     numOfWords = 0
     numOfLines = 0
     wordCount = {}
+    uniqueWords = set()
 
     try:
         with path.open(mode='r') as file:
@@ -18,15 +19,18 @@ def wc(filename: str):
                 words = line.split()
                 numOfWords += len(words)
                 # put distinct words in dictionary as keys and count amount of times they appear
-                for word in words:
-                    wordCount[word] = wordCount.get(word, 0) + 1
-                # this value represents amount of distinct words in a file
-                distinctWordCount = len(wordCount)
+                # for word in words:
+                #     wordCount[word] = wordCount.get(word, 0) + 1
+                # # this value represents amount of distinct words in a file
+                # distinctWordCount = len(wordCount)
+                # below better way to count distinct words
+                uniqueWords.update(words)
+
     except FileNotFoundError:
         print("Provided filename could not be found")
         return None
 
-    return numOfChars, numOfWords, numOfLines, distinctWordCount
+    return numOfChars, numOfWords, numOfLines, len(uniqueWords)
 
 
 # Example usage
