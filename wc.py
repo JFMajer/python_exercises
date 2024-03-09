@@ -11,6 +11,7 @@ def wc(filename: str):
     try:
         with path.open(mode='r') as file:
             for line in file:
+                numOfChars += len(line)
                 # increment number of lines
                 numOfLines += 1
                 # count number of words in each line
@@ -23,8 +24,18 @@ def wc(filename: str):
                 distinctWordCount = len(wordCount)
     except FileNotFoundError:
         print("Provided filename could not be found")
+        return None
 
-    print(numOfLines, numOfWords, distinctWordCount)
+    return numOfChars, numOfWords, numOfLines, distinctWordCount
 
 
-wc("files/wcfile.txt")
+# Example usage
+filename = "files/wcfile.txt"
+try:
+    chars, words, lines, distinct_words = wc(filename)
+    print(f"Number of characters: {chars}")
+    print(f"Number of words: {words}")
+    print(f"Number of lines: {lines}")
+    print(f"Distinct words: {distinct_words}")
+except ValueError as e:
+    print(f"Error unpacking return values from wc function: {e}")
