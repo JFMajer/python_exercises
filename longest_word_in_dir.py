@@ -36,4 +36,7 @@ def find_all_longest_words(directory: str, pattern: str = '*.txt') -> dict:
 
 
 print(find_all_longest_words("files"))
+# {'middlemarch.txt': 'disproportionately', 'don-quixote.txt': 'circumstantiality', 'buddenbrooks.txt':
+# 'achtundsechzigtausendsiebenhundertundfünfundfünfzig', 'little-dorrit.txt': 'incomprehensibility', 'wcfile.txt':
+# 'referential', 'der_tod_in_venedig.txt': 'Gesundheitsverhältnisse'}
 print(find_all_longest_words("files", "*"))
