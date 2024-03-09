@@ -21,5 +21,7 @@ def etcpasswd_to_dict() -> dict:
     return users_ids
 
 
+
+
 new_dict = etcpasswd_to_dict()
 print(new_dict)
