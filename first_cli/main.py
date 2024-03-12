@@ -5,12 +5,8 @@ from typing_extensions import Annotated
 from rich import print
 
 
-def main(name: Annotated[Optional[str], typer.Argument()] = None, lastname: Annotated[Optional[str], typer.Argument()] = None, formal: bool = False):
-    """
-    Say hi to NAME, optionally with a --lastname.
-
-    If --formal is used, greets formally.
-    """
+def main(name: Annotated[str, typer.Argument(..., help="First Name")],
+         lastname: Annotated[Optional[str], typer.Argument(help="Last Name")] = None, formal: bool = False):
     greeting = "Good day sir/madam" if formal else "Hello"
     full_name = f"{name or ''} {lastname or ''}".strip()
 
