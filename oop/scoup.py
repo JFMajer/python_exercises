@@ -4,11 +4,8 @@ class Scoop:
 
 
 def create_scoops():
-    chocolate = Scoop("chocolate")
-    vanilla = Scoop("vanilla")
-    coffee = Scoop("coffee")
-    flavours = [chocolate, vanilla, coffee]
-    for flavor in flavours:
+    scoops = [Scoop(flavor) for flavor in ('chocolate', 'coffee', 'vanilla')]
+    for flavor in scoops:
         print(flavor.flavor)
 
 
