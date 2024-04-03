@@ -1,15 +1,15 @@
+from dataclasses import dataclass, field
+from typing import List
+
 from scoup import Scoop
 
 
+@dataclass
 class Bowl:
-    def __init__(self):
-        self.scoops = []
+    scoops: List[Scoop] = field(default_factory=list)
 
-    def add_scoops(self, *scoops):
+    def add_scoops(self, *scoops: Scoop):
         self.scoops.extend(scoops)
-
-    def __str__(self):
-        return f"My bowl contains {[s.flavor for s in self.scoops]}"
 
 
 s1 = Scoop('chocolate')

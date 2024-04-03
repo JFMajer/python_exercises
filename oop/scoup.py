@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Scoop:
-    def __init__(self, flavor):
-        self.flavor = flavor
+    flavor: str
 
 
 def create_scoops():
