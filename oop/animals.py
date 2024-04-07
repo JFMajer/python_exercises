@@ -1,6 +1,3 @@
-from cage import Cage
-
-
 class Animal:
     def __init__(self, species, number_of_legs, color):
         self.species = species
@@ -33,15 +30,3 @@ class Snake(Animal):
         super().__init__("snake", 0, color)
 
 
-s = Sheep('white')
-w = Wolf('brown')
-print(s.species)
-print(s.color)
-print(s.number_of_legs)
-print(s)
-
-c1 = Cage()
-c1.add_animals(s, w)
-print(c1)
-c2 = Cage()
-print(c2)
